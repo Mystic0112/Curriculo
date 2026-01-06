@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Hélio Vinícius Lopes de Meneses</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Segoe+UI&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+        }
+
+        /* --- BARRA LATERAL (PRETA) --- */
+        .sidebar {
+            background-color: #000000;
+            width: 32%;
+            padding: 40px;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif; 
+        }
+
+        /* Aplicando fonte Montserrat nos elementos de texto */
+        .sidebar h1, .sidebar h2, .sidebar p, .sidebar a, .sidebar li, .sidebar span, .sidebar div {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Proteção para os ícones funcionarem */
+        .sidebar i, .fa, .fas, .fab, .fa-solid, .fa-brands {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+        }
+
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            border: 4px solid #00d986;
+            border-radius: 50%;
+            margin: 0 auto 35px auto;
+            background-image: url('https://github.com/Mystic0112.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .sidebar h1 {
+            color: #ffffff;
+            font-size: 26px;
+            margin-bottom: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+        
+        .sidebar-role {
+            color: #00d986;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 40px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* TÍTULOS DA BARRA LATERAL */
+        .sidebar-title {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            margin-top: 35px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            /* A BARRINHA VERDE AQUI */
+            border-bottom: 1px solid #333; 
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sidebar-title i {
+            color: #00d986;
+            font-size: 18px;
+        }
+
+        /* --- ESTILO CONTATO --- */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon-circle {
+            width: 38px;
+            height: 38px;
+            background-color: #1f1f1f;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .icon-circle i {
+            color: #00d986;
+            font-size: 16px;
+        }
+
+        .contact-text a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .contact-text a:hover {
+            color: #00d986;
+        }
+
+        /* --- ESTILO FORMAÇÃO --- */
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .degree-title {
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 15px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .university-name {
+            color: #888;
+            font-size: 13px;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .grad-year {
+            color: #00d986;
+            font-size: 13px;
+            font-weight: 700;
+            display: block;
+        }
+
+        /* --- ESTILO IDIOMAS --- */
+        .language-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .language-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .language-name {
+            color: #e0e0e0;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        /* AQUI A MUDANÇA: Cor Sólida igual à da barra */
+        .language-badge {
+            background-color: #00d986; /* Verde Sólido Exato */
+            color: #000000; /* Texto preto para contraste */
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 800; /* Negrito extra */
+            text-transform: uppercase;
+        }
+
+        /* --- ESTILO SOFT SKILLS --- */
+        .soft-skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .soft-skill-badge {
+            background-color: #1f1f1f;
+            color: #f0f0f0;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- CONTEÚDO PRINCIPAL (DIREITA) --- */
+        .main-content {
+            background-color: #ffffff;
+            width: 68%;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #1a1a1a;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-left: 6px solid #00d986;
+            padding-left: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .main-content p {
+            margin-bottom: 12px;
+            line-height: 1.7;
+            color: #333;
+            font-size: 17px;
+        }
+
+        .main-content ul {
+            padding-left: 20px;
+        }
+
+        .main-content li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #333;
+            font-size: 17px;
+        }
+
+        strong { color: #000; font-weight: 700; }
+
+        /* Estilo Skills Grid */
+        .skills-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .skills-header h2 {
+            border: none;
+            padding: 0;
+            margin: 0;
+            font-size: 24px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .skills-header span {
+            color: #00d986;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .skills-line {
+            height: 3px;
+            background-color: #00d986;
+            width: 100%;
+            margin-left: 20px;
+            border-radius: 2px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-card {
+            background-color: #f8f9fa;
+            border-left: 5px solid #00d986;
+            border-radius: 6px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-3px);
+            background-color: #f0fff9;
+        }
+
+        .skill-card i {
+            font-size: 26px;
+            margin-right: 15px;
+            color: #333;
+            width: 30px;
+            text-align: center;
+        }
+
+        .skill-card span {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #444;
+            font-size: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .sidebar, .main-content { width: 100%; padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <div class="profile-photo"></div>
+        
+        <h1>Hélio Vinícius</h1>
+        <div class="sidebar-role">DESENVOLVEDOR FULL STACK</div>
+
+        <div class="sidebar-title">
+            <i class="fa-solid fa-address-book"></i> CONTATO
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-row">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="contact-text">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Parnaíba+PI" target="_blank">Parnaíba, PI</a>
+                </div>
+            </div>
+
+            <div class="contact-row">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="contact-text">
+                    <a href="tel:+5586999939584">(86) 9-9993-9584</a>
+                </div>
+            </div>
+
+            <div class="contact-row">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                    <a href="mailto:c9hesky@gmail.com">c9hesky@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="contact-row">
+                <div class="icon-circle">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+                <div class="contact-text">
+                    <a href="https://github.com/Mystic0112" target="_blank">/Mystic0112</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-title">
+            <i class="fa-solid fa-graduation-cap"></i> FORMAÇÃO
+        </div>
+
+        <div class="education-item">
+            <span class="degree-title">Análise e Des. de Sistemas</span>
+            <span class="university-name">UNINASSAU Parnaíba</span>
+            <span class="grad-year">2024 - 2026</span>
+        </div>
+
+        <div class="sidebar-title" style="border-bottom: 2px solid #00d986;">
+            <i class="fa-solid fa-language"></i> IDIOMAS
+        </div>
+        
+        <div class="language-container">
+            <div class="language-row">
+                <span class="language-name">Português</span>
+                <span class="language-badge">Nativo</span>
+            </div>
+            
+            <div class="language-row">
+                <span class="language-name">Inglês</span>
+                <span class="language-badge">Intermediário</span>
+            </div>
+
+            <div class="language-row">
+                <span class="language-name">Italiano</span>
+                <span class="language-badge">Intermediário</span>
+            </div>
+        </div>
+
+        <div class="sidebar-title" style="border-bottom: 2px solid #00d986; margin-top: 35px;">
+            <i class="fa-solid fa-brain"></i> SOFT SKILLS
+        </div>
+        
+        <div class="soft-skills-container">
+            <span class="soft-skill-badge">Comunicação</span>
+            <span class="soft-skill-badge">Trabalho em Equipe</span>
+            <span class="soft-skill-badge">Resolução de Problemas</span>
+            <span class="soft-skill-badge">Criatividade</span>
+            <span class="soft-skill-badge">Adaptabilidade</span>
+        </div>
+
+    </div>
+
+    <div class="main-content">
+        <div class="section">
+            <h2>OBJETIVO</h2>
+            <p>Estudante de Análise e Desenvolvimento de Sistemas buscando oportunidade de estágio ou posição Júnior como Desenvolvedor. Possuo foco em entregar soluções eficientes utilizando Python e JavaScript, unindo técnica de programação com vivência multidisciplinar na área da saúde.</p>
+        </div>
+
+        <div class="section">
+            <h2>RESUMO DE QUALIFICAÇÕES</h2>
+            <ul>
+                <li>Cursando o 3º período de Análise e Desenvolvimento de Sistemas na UNINASSAU.</li>
+                <li><strong>Stack:</strong> Domínio de Python, JavaScript e TypeScript, com experiência prática em Django, Vue.js e React.</li>
+                <li><strong>Mobile:</strong> Estudos ativos e cursos em andamento na tecnologia Flutter.</li>
+                <li><strong>Front-end:</strong> Sólidos conhecimentos em HTML5 e CSS3 para interfaces responsivas.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>PROJETO DE DESTAQUE</h2>
+            <p><strong>Front-CESBEM (Sistema para Clínica)</strong></p>
+            <p><a href="https://github.com/Mystic0112/projeto-Front-CESBEM" target="_blank" style="color: #00d986; text-decoration: none; font-weight: bold; font-family: 'Montserrat', sans-serif;">github.com/Mystic0112/projeto-Front-CESBEM</a></p>
+            <p>Desenvolvimento de interface front-end voltada para a área clínica/saúde. Aplicação de conhecimentos de usabilidade e tecnologias web modernas.</p>
+        </div>
+
+        <div class="section">
+            <div class="skills-header">
+                <h2><span>//</span> TECHNICAL SKILLS</h2>
+                <div class="skills-line"></div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fa-brands fa-python"></i>
+                    <span>Python & Django</span>
+                </div>
+                
+                <div class="skill-card">
+                    <i class="fa-brands fa-js"></i>
+                    <span>JavaScript & TS</span>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-brands fa-react"></i>
+                    <span>React.js</span>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-brands fa-vuejs"></i>
+                    <span>Vue.js</span>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-brands fa-android"></i>
+                    <span>Flutter (Mobile)</span>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-brands fa-html5"></i>
+                    <span>HTML5 & CSS3</span>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-brands fa-git-alt"></i>
+                    <span>Git & GitHub</span>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-solid fa-database"></i>
+                    <span>SQL, NoSQL & Supabase</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>CURSOS E APERFEIÇOAMENTO</h2>
+            <ul>
+                <li>Desenvolvimento Mobile com Flutter (Em andamento).</li>
+                <li>Cursos intensivos em Python, Django, React, Vue.js e TypeScript.</li>
+                <li>Capacitação na área de Educador Físico e Nutrição.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
